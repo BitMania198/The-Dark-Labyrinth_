@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4b614af1fb75b4aabc55c66d07ed29, type: 3}
+  m_Name: Diary
+  m_EditorClassIdentifier: 
+  ItemSprite: {fileID: 286777259, guid: ebe2be00a4be15747a72f7a0275af4b3, type: 3}
+  ItemName: Princess' Diary
+  isTaken: 1
+  ItemType: 1
+  AllItems:
+  - {fileID: 11400000, guid: b088f725649ac4340909144e46ccdbeb, type: 2}
+  - {fileID: 11400000, guid: fd0db397810453a4987093916ed9679c, type: 2}
+  - {fileID: 11400000, guid: 1eff0b3ee35f9d540a432eb8202ecd93, type: 2}
+  - {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
+  - {fileID: 11400000, guid: 23183d22df4863540b5a91b1c6146ae9, type: 2}
+  - {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
+  - {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}

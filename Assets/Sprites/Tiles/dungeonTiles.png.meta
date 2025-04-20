@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -169,7 +169,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74dea724b8ae7a64994618fd7d636fa6
-      internalID: 1042347362
+      spriteID: 3dc330ca7f7e3de42a54d3cd6869f247
+      internalID: 99903868
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
       name: dungeonTiles_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
         width: 16
         height: 16
@@ -200,29 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4cd39504f8b5bc4597d108d53d016f3
-      internalID: 777752243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeonTiles_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d7883d47f8c66140a454a79c1653b94
-      internalID: -1938326146
+      spriteID: 691b4834fc6e3a04e8f6c8116e576dc5
+      internalID: -886597231
       vertices: []
       indices: 
       edges: []
@@ -240,9 +219,8 @@ TextureImporter:
     nameFileIdTable:
       dungeonTiles_0: -955245937
       dungeonTiles_1: -1057392540
-      dungeonTiles_2: 1042347362
-      dungeonTiles_3: 777752243
-      dungeonTiles_4: -1938326146
+      dungeonTiles_2: 99903868
+      dungeonTiles_3: -886597231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
