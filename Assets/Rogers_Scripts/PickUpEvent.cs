@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpEvent : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class PickUpEvent : MonoBehaviour
     bool ChoiceEvent = false;
     bool rollEvent = false;
     public Transform startPos;
+
+    public Player_Movement_TileSize playerMovement; // Reference to the player's movement script
     Transform playerPos;
+    public Text eventText; // UI Text to display event messages
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +24,26 @@ public class PickUpEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ChoiceEvent)//player choses if they want to read with the y or n key, if y roll
+        if (ChoiceEvent)//player choses if they want to read with the y or n key, if y roll
         {
-            if(Input.GetKeyDown(KeyCode.Y))
+            if (Input.GetKeyDown(KeyCode.Y))
             {
                 print("Press 'Space' to roll dice.");
+                eventText.text = "Press 'Space' to roll dice.";
                 ChoiceEvent = false;
                 rollEvent = true;
             }
-            if(Input.GetKeyDown(KeyCode.N))
+            if (Input.GetKeyDown(KeyCode.N))
             {
                 print("You decide to respect the princess' privacy.");
+                eventText.text = "You decide to respect the princess' privacy.";
                 inventory.AddItem(accessoryItem);
                 ChoiceEvent = false;
             }
         }
-        if(rollEvent)//player rolls with space bar for event
+        if (rollEvent)//player rolls with space bar for event
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 rollEvent = false;
                 RollForItem();
@@ -60,33 +66,40 @@ public class PickUpEvent : MonoBehaviour
     }
     void CollectItem() //takes item if it isnt taken unless its diary, where you have the option read
     {
-        if(!accessoryItem.isTaken)
+        if (!accessoryItem.isTaken)
         {
             accessoryItem.isTaken = true;
-            if(accessoryItem.ItemType == AccessoryItems.specialItem.Diary)
+            if (accessoryItem.ItemType == AccessoryItems.specialItem.Diary)
             {
                 print("You have found the princess' diary! Read it?\nY/N");
+                eventText.text = "You have found the princess' diary! Read it?\nY/N"; // Display message to read the diary
+                playerMovement.allowDiceRolling = false; // Disable dice rolling while making a choice
                 ChoiceEvent = true;
             }
             else
             {
-                print("You have found the " +  accessoryItem.name + "!");
+                print("You have found the " + accessoryItem.name + "!");
+                eventText.text = "You have found the " + accessoryItem.name + "!"; // Display message for finding the item
                 inventory.AddItem(accessoryItem);
+                playerMovement.allowDiceRolling = true; // Re-enable dice rolling after collecting the item
             }
         }
     }
 
     void RollForItem()
     {
-        int diceRoll = Random.Range(1 , 6);
-        if(diceRoll  == 1 || diceRoll == 2)
+        int diceRoll = Random.Range(1, 6);
+        if (diceRoll == 1 || diceRoll == 2)
         {
             print("You find nothing interesting, but you still bring her diary");
+            eventText.text = "You find nothing interesting, but you still bring her diary"; // Display message for finding nothing interesting
             inventory.AddItem(accessoryItem);
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after rolling the dice
         }
         else if (diceRoll == 3 || diceRoll == 4)
         {
             print("You find a horrifing secret which you wish you never knew.\n You drop the diary and head to the start");
+            eventText.text = "You find a horrifying secret which you wish you never knew.\nYou drop the diary and head to the start"; // Display message for finding a horrifying secret
             //insert sending to start code here (needs to be before accesoryItem code
             Player_Reset playerReset = playerPos.GetComponent<Player_Reset>();
             if (playerReset != null && playerReset.startTransform != null)
@@ -98,15 +111,17 @@ public class PickUpEvent : MonoBehaviour
             {
                 Debug.LogWarning("Player_Reset component or startTransform not found on the player!");
             }
-            
             accessoryItem.isTaken = false;
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after rolling the dice
         }
         else
         {
             print("You find the location of one of her most prized possetions!");
+            eventText.text = "You find the location of one of her most prized possessions!"; // Display message for finding a prized possession
             inventory.AddItem(accessoryItem);
-            
-            for(int i = 0; i < accessoryItem.AllItems.Length; i++)
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after rolling the dice
+
+            for (int i = 0; i < accessoryItem.AllItems.Length; i++)
             {
                 if (!accessoryItem.AllItems[i].isTaken && accessoryItem.AllItems[i].ItemType != AccessoryItems.specialItem.MinotaurHorns)
                 {
@@ -117,4 +132,24 @@ public class PickUpEvent : MonoBehaviour
 
         }
     }
+    
+    void HandleLostItem()
+{
+    if (inventory.HasItems())
+    {
+        AccessoryItems lostItem = inventory.RemoveRandomItem();
+        if (lostItem != null)
+        {
+            eventText.text = $"You lost your {lostItem.ItemName}!";
+        }
+        else
+        {
+            eventText.text = "You lost an item, but no items were found in your inventory.";
+        }
+    }
+    else
+    {
+        eventText.text = "You have no items to lose.";
+    }
+}
 }

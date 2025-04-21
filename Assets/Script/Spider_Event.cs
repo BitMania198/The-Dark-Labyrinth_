@@ -8,6 +8,11 @@ public class Spider_Event : MonoBehaviour
     bool rollEvent = false;
     public GameObject Player; // Reference to the player object
 
+    public AccessoryItems accessoryItem; // Reference to the accessory item
+    public PlayerInventory inventory; // Reference to the player's inventory
+
+    public Player_Movement_TileSize playerMovement; // Reference to the player's movement script
+
     public Text eventText; // UI Text to display event messages
 
     void Start()
@@ -23,7 +28,6 @@ public class Spider_Event : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) // Use space key to roll the dice
             {
                 RollForfightSpider(); // Call the method to handle the zombie fight logic
-                rollEvent = false; // Reset the flag after rolling
             }
         }
     }
@@ -33,6 +37,7 @@ public class Spider_Event : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player = collision.gameObject; // Get the player object
+            playerMovement.allowDiceRolling = false; // Disable dice rolling while in the spider event area
             if (!rollEvent) // If the player is not already rolling
             {
                 eventText.text = "You have encountered a spider! Press 'Space' to roll for fight."; // Display event message
@@ -55,21 +60,30 @@ public class Spider_Event : MonoBehaviour
 
         if (diceRoll == 1 || diceRoll == 2 || diceRoll == 3 || diceRoll == 4)
         {
-            // Player loses the fight
-            eventText.text = "You win the fight against the spider";    
+            eventText.text = "You win the fight against the spider";
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
         }
         else if (diceRoll == 5)
         {
-            if (playerInventory != null && playerInventory.HasItems())
+        if (playerInventory != null && playerInventory.HasItems())
+        {
+            AccessoryItems lostItem = playerInventory.RemoveRandomItem(); // Remove a random item
+            if (lostItem != null)
             {
-                eventText.text = "You got bitten by the spider and lost an item from your inventory.";
-                playerInventory.RemoveRandomItem(); // Remove a random item from the player's inventory
+                eventText.text = $"You got bitten by the spider and lost your {lostItem.ItemName}!";
             }
             else
             {
-                eventText.text = "You got bitten by the spider! But you have no items to lose.";
-                MovePlayerToStart(); // Move the player to the start position
+                eventText.text = "You got bitten by the spider, but no items were lost.";
             }
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
+        }
+        else
+        {
+            eventText.text = "You got bitten by the spider! But you have no items to lose.";
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
+            MovePlayerToStart(); // Move the player to the start position
+        }
         }
         else if (diceRoll == 6)
         {

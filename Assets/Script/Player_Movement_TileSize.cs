@@ -21,17 +21,25 @@ public class Player_Movement_TileSize : MonoBehaviour
     public Text diceText; // Reference to the UI Text to display dice roll
 
     public Collider2D playerCollider; // Reference to the player's collider
+    public Collider2D ItemCollider; // Reference to the item collider
+
+    public GameObject ItemObject;
 
     // Start is called before the first frame update
     void Start()
     {
         movePoint.parent = null; // Detach movePoint from the player
-        canMove = false; // Initially, the player cannot move   
+        canMove = false; // Initially, the player cannot move
+        ItemObject.SetActive(false); // Ensure the item object is inactive at the start   
 
         playerCollider = GetComponent<Collider2D>();
         if (playerCollider == null)
         {
             playerCollider.enabled = true; // Ensure the player's collider is enabled
+        }
+        if (ItemCollider != null)
+        {
+            ItemCollider.enabled = true; // Disable the item collider if it exists
         }
     }
 
@@ -40,10 +48,20 @@ public class Player_Movement_TileSize : MonoBehaviour
     {
         if (!canMove)
         {
-            // If the player cannot move, allow them to roll the dice by pressing space key
-            if (Input.GetMouseButtonDown(0)) // Use space key to roll the dice
+            if (allowDiceRolling)
             {
-                RollDice(); // Call the method to roll the dice
+                if (diceText != null)
+                {
+                    diceText.text = "Press Left Mouse to Roll Dice"; // Display message to roll the dice
+                    if (Input.GetMouseButtonDown(0)) // Check for space key press to roll the dice
+                    {
+                        RollDice(); // Call the method to roll the dice
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("Dice Text UI element is not assigned!"); // Log a warning if diceText is not assigned
+                }
             }
         }
         else
@@ -51,6 +69,10 @@ public class Player_Movement_TileSize : MonoBehaviour
             if (playerCollider != null)
             {
                 playerCollider.enabled = false;
+            }
+            if (ItemCollider != null)
+            {
+                ItemCollider.enabled = false; // Disable the item collider while moving
             }
 
             transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
@@ -82,6 +104,10 @@ public class Player_Movement_TileSize : MonoBehaviour
                 if (playerCollider != null)
                 {
                     playerCollider.enabled = true; // Re-enable the player's collider
+                }
+                if (ItemCollider != null)
+                {
+                    ItemCollider.enabled = true; // Re-enable the item collider
                 }
             }
         }

@@ -34,14 +34,20 @@ public class PlayerInventory : MonoBehaviour
         return possesions.Count > 0;
     }
 
-    public void RemoveRandomItem()
+    public AccessoryItems RemoveRandomItem()
     {
         if (possesions.Count > 0)
         {
             int randomIndex = Random.Range(0, possesions.Count);
+            AccessoryItems removedItem = possesions[randomIndex];
             possesions.RemoveAt(randomIndex);
             updateUI();
-            Debug.Log("Removed an item from inventory. Remaining items: " + possesions.Count);
+            return removedItem; // Return the removed item
+        }
+        else
+        {
+            Debug.LogWarning("No items to remove from inventory.");
+            return null; // Return null if no items are available
         }
     }
 }
