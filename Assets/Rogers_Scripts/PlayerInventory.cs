@@ -28,4 +28,20 @@ public class PlayerInventory : MonoBehaviour
             inven_sprites[i].sprite = possesions[i].ItemSprite;
         }
     }
+
+    public bool HasItems()
+    {
+        return possesions.Count > 0;
+    }
+
+    public void RemoveRandomItem()
+    {
+        if (possesions.Count > 0)
+        {
+            int randomIndex = Random.Range(0, possesions.Count);
+            possesions.RemoveAt(randomIndex);
+            updateUI();
+            Debug.Log("Removed an item from inventory. Remaining items: " + possesions.Count);
+        }
+    }
 }

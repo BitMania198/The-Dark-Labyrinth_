@@ -88,7 +88,16 @@ public class PickUpEvent : MonoBehaviour
         {
             print("You find a horrifing secret which you wish you never knew.\n You drop the diary and head to the start");
             //insert sending to start code here (needs to be before accesoryItem code
-            playerPos.position = startPos.position;
+            Player_Reset playerReset = playerPos.GetComponent<Player_Reset>();
+            if (playerReset != null && playerReset.startTransform != null)
+            {
+                playerPos.position = playerReset.startTransform.position; // Reset player position
+                playerPos.GetComponent<Player_Movement_TileSize>().movePoint.position = playerReset.startTransform.position; // Reset move point
+            }
+            else
+            {
+                Debug.LogWarning("Player_Reset component or startTransform not found on the player!");
+            }
             
             accessoryItem.isTaken = false;
         }
