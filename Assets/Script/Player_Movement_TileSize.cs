@@ -10,7 +10,7 @@ public class Player_Movement_TileSize : MonoBehaviour
 
     public LayerMask whatStopsMovement;
 
-    private int diceRoll = -1;
+    public int diceRoll = -1;
     public bool canMove;
 
     public bool allowDiceRolling = true; // Flag to allow or disallow dice rolling

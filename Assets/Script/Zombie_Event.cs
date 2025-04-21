@@ -12,6 +12,8 @@ public class Zombie_Event : MonoBehaviour
 
     public Player_Movement_TileSize playerMovement;
 
+    public GameObject Camera;
+
     void Start()
     {
         // Initialize any necessary variables or states here
@@ -46,7 +48,8 @@ public class Zombie_Event : MonoBehaviour
         else if (collision.tag != "Player" && rollEvent) // If the player leaves the trigger area
         {
             rollEvent = false; // Reset the flag if the player is not in the trigger area
-            Debug.Log("You left the zombie space. You can no longer roll for fight.");
+            playerMovement.allowDiceRolling = true; // Re-enable dice rolling
+            eventText.text = ""; // Clear the event text
 
         }
     }
@@ -60,6 +63,7 @@ public class Zombie_Event : MonoBehaviour
             Debug.Log("You lost the fight against the zombie!");
             eventText.text = "You lost the fight against the zombie!"; // Display loss message
             Player.SetActive(false); // Example action: deactivate player
+            rollEvent = false; // Reset the roll event flag
             // Handle losing logic here, e.g., reduce health, respawn, etc.
         }
         else if (diceRoll == 2)
@@ -68,7 +72,7 @@ public class Zombie_Event : MonoBehaviour
             Debug.Log("You won the fight against the zombie! But you are injured. you need to go to the number 14 space to heal.");
             eventText.text = "You won the fight against the zombie! But you are injured. You need to go to the number 14 space to heal."; // Display win message
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
-            playerMovement.ItemObject.SetActive(true); // Example action: activate an item object
+            rollEvent = false; // Reset the roll event flag
             // Handle winning logic here, e.g., gain items, experience, etc.
         }
         else if (diceRoll == 3 || diceRoll == 4 || diceRoll == 5)
@@ -77,6 +81,7 @@ public class Zombie_Event : MonoBehaviour
             Debug.Log("You managed to defeat the zombie!");
             eventText.text = "You managed to defeat the zombie! You can now escape."; // Display escape message
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling after escaping
+            rollEvent = false; // Reset the roll event flag
             // Handle escaping logic here, e.g., return to start position, etc.
         }
         else if (diceRoll == 6)
@@ -85,9 +90,9 @@ public class Zombie_Event : MonoBehaviour
             Debug.Log("You rolled a 6! You can choose to fight or escape.");
             eventText.text = "You rolled a 6! You can choose to fight or escape."; // Display special case message
             playerMovement.allowDiceRolling = true; // Disable dice rolling while making a choice
+            rollEvent = false; // Reset the roll event flag
             // Implement logic for player choice here, e.g., show UI options
             // For example, you could set a flag to indicate the player can choose
-            rollEvent = true; // Set the flag to indicate the player can make a choice
         }
     }
 

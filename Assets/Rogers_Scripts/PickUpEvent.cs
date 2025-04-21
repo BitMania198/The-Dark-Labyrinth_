@@ -132,24 +132,24 @@ public class PickUpEvent : MonoBehaviour
 
         }
     }
-    
+
     void HandleLostItem()
-{
-    if (inventory.HasItems())
     {
-        AccessoryItems lostItem = inventory.RemoveRandomItem();
-        if (lostItem != null)
+        if (inventory.HasItems())
         {
-            eventText.text = $"You lost your {lostItem.ItemName}!";
+            AccessoryItems lostItem = inventory.RemoveRandomItem();
+            if (lostItem != null)
+            {
+                eventText.text = $"You lost your {lostItem.ItemName}!";
+            }
+            else
+            {
+                eventText.text = "You lost an item, but no items were found in your inventory.";
+            }
         }
         else
         {
-            eventText.text = "You lost an item, but no items were found in your inventory.";
+            eventText.text = "You have no items to lose.";
         }
     }
-    else
-    {
-        eventText.text = "You have no items to lose.";
-    }
-}
 }
