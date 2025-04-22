@@ -8,10 +8,10 @@ public class Spider_Event : MonoBehaviour
     bool rollEvent = false;
     public GameObject Player; // Reference to the player object
 
-    public AccessoryItems accessoryItem; // Reference to the accessory item
+    private AccessoryItems accessoryItem; // Reference to the accessory item
     public PlayerInventory inventory; // Reference to the player's inventory
 
-    public Player_Movement_TileSize playerMovement; // Reference to the player's movement script
+    public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
 
     public Text eventText; // UI Text to display event messages
 

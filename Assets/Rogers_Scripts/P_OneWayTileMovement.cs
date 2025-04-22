@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P_OneWayTileMovement : MonoBehaviour
 {
@@ -8,8 +9,15 @@ public class P_OneWayTileMovement : MonoBehaviour
     public MovementTile[] movemementTile;
     public Sprite[] movementTileSprites;
 
+    public Collider2D playerCollider; // Reference to the player's collider
 
-    Vector3 playerPos;
+    public bool allowDiceRolling = true; // Flag to allow or disallow dice rolling
+
+    public Text diceText; // Reference to the UI Text to display dice roll
+
+    public Transform startTransform; // Starting position of the player
+
+    public Vector3 playerPos;
     Animator animator;
 
     [HideInInspector]
@@ -26,6 +34,11 @@ public class P_OneWayTileMovement : MonoBehaviour
         canMove = false;
         playerPos = transform.position;
         DisableMovementTiles();
+        playerCollider = GetComponent<Collider2D>();
+        if (playerCollider == null)
+        {
+            playerCollider.enabled = true; // Ensure the player's collider is enabled
+        }
     }
 
     // Update is called once per frame
@@ -34,36 +47,88 @@ public class P_OneWayTileMovement : MonoBehaviour
         //print("Dice Roll: " + DiceRoll + "\nCan Move: " + canMove);
         if (!canMove)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (allowDiceRolling)
             {
-                canMove = true;
-                DiceRoll = Random.Range(1, 6);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    canMove = true;
+                    DiceRoll = Random.Range(1, 6);
+                    if (diceText != null)
+                    {
+                        diceText.text = "Dice Roll: " + DiceRoll; // Display the dice roll
+                    }
+                }
             }
         }
-        if(canMove && !isMoving && isntStuck()) // Up = 0 Right = 1 Down = 2 Left = 3
+        else
         {
-            if(Input.GetKeyDown(KeyCode.W))
+            if (playerCollider != null)
             {
-                isMoving = true;
-                StartCoroutine(MoveToTile(0));
+                playerCollider.enabled = false; // Ensure the player's collider is enabled
             }
-            if (Input.GetKeyDown(KeyCode.A))
+
+            if (canMove && !isMoving && isntStuck()) // Up = 0 Right = 1 Down = 2 Left = 3
             {
-                isMoving = true;
-                StartCoroutine(MoveToTile(3));
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                isMoving = true;
-                StartCoroutine(MoveToTile(2));
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                isMoving = true;
-                StartCoroutine(MoveToTile(1));
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    isMoving = true;
+                    StartCoroutine(MoveToTile(0));
+                }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    isMoving = true;
+                    StartCoroutine(MoveToTile(3));
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    isMoving = true;
+                    StartCoroutine(MoveToTile(2));
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    isMoving = true;
+                    StartCoroutine(MoveToTile(1));
+                }
             }
         }
     }
+        public void ResetToStart()
+    {
+        if (startTransform != null)
+        {
+            // Reset position
+            transform.position = startTransform.position;
+
+            // Stop movement
+            Rigidbody2D playerRigidbody = GetComponent<Rigidbody2D>();
+            if (playerRigidbody != null)
+            {
+                playerRigidbody.velocity = Vector2.zero;
+                playerRigidbody.angularVelocity = 0f;
+            }
+
+            // Reset movement flags
+            canMove = false;
+            isMoving = false;
+            DiceRoll = 0;
+
+            // Disable movement tiles
+            DisableMovementTiles();
+
+            // Re-enable collider
+            if (playerCollider != null)
+            {
+                playerCollider.enabled = true;
+            }
+
+            Debug.Log("Player reset to start position: " + startTransform.position);
+        }
+        else
+        {
+            Debug.LogWarning("Start Transform is not assigned!");
+        }
+    }
+
     IEnumerator MoveToTile(int moveID)
     {
         if (isMoveables[moveID].isMoveable)
@@ -88,19 +153,23 @@ public class P_OneWayTileMovement : MonoBehaviour
     }
     void DisableMovementTiles()
     {
-        for(int i = 0; i < movemementTile.Length; i++)
+        for (int i = 0; i < movemementTile.Length; i++)
         {
             movemementTile[i].isActive = false;
+            if (playerCollider != null)
+            {
+                playerCollider.enabled = true; // Re-enable the player's collider
+            }
         }
     }
     int GetUnusedTile()
     {
-        for(int i = 0; i < movemementTile.Length; i++)
+        for (int i = 0; i < movemementTile.Length; i++)
         {
             if (!movemementTile[i].isActive)
             {
                 return i;
-                
+
             }
         }
         return 6;
@@ -112,13 +181,13 @@ public class P_OneWayTileMovement : MonoBehaviour
             case 0:
                 animator.SetBool("MoveUp", toggleVal);
                 break;
-                case 1:
+            case 1:
                 animator.SetBool("MoveRight", toggleVal);
                 break;
-                case 2:
+            case 2:
                 animator.SetBool("MoveDown", toggleVal);
                 break;
-                case 3:
+            case 3:
                 animator.SetBool("MoveLeft", toggleVal);
                 break;
         }
@@ -152,7 +221,7 @@ public class P_OneWayTileMovement : MonoBehaviour
     }
     public bool isntStuck()
     {
-        for(int i = 0; i < isMoveables.Length; i++)
+        for (int i = 0; i < isMoveables.Length; i++)
         {
             if (isMoveables[i].isMoveable) return true;
         }

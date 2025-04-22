@@ -64,6 +64,11 @@ public class PlayerInventory : MonoBehaviour
         return null; // Return null if no matching item is found
     }
 
+    public int GetPossessionCount()
+    {
+        return possesions.Count; // Return the number of items in the inventory
+    }
+
     public void EquipItem(AccessoryItems item)
     {
         if (item == null)

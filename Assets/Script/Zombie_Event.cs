@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Zombie_Event : MonoBehaviour
 {
-    bool rollEvent = false;
-    public GameObject Player;
+    public bool rollEvent = false;
+    public GameObject GameOverPanel;
 
     public Text eventText; // UI Text to display event messages
 
-    public Player_Movement_TileSize playerMovement;
+    public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
 
     public GameObject Camera;
 
@@ -18,6 +18,7 @@ public class Zombie_Event : MonoBehaviour
     {
         // Initialize any necessary variables or states here
         rollEvent = false;
+        GameOverPanel.SetActive(false); // Ensure the GameOverPanel is inactive at the start
     }
     // Update is called once per frame
     void Update()
@@ -36,7 +37,6 @@ public class Zombie_Event : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Player = collision.gameObject; // Get the player object
             playerMovement.allowDiceRolling = false; // Disable dice rolling while in the zombie event area
             if (!rollEvent) // If the player is not already rolling
             {
@@ -47,6 +47,7 @@ public class Zombie_Event : MonoBehaviour
         }
         else if (collision.tag != "Player" && rollEvent) // If the player leaves the trigger area
         {
+            eventText.text = "Noone appear";
             rollEvent = false; // Reset the flag if the player is not in the trigger area
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling
             eventText.text = ""; // Clear the event text
@@ -62,8 +63,9 @@ public class Zombie_Event : MonoBehaviour
             // Player loses the fight
             Debug.Log("You lost the fight against the zombie!");
             eventText.text = "You lost the fight against the zombie!"; // Display loss message
-            Player.SetActive(false); // Example action: deactivate player
+            GameOverPanel.SetActive(true); // Example action: deactivate player
             rollEvent = false; // Reset the roll event flag
+            playerMovement.allowDiceRolling = false; // Re-enable dice rolling after the fight
             // Handle losing logic here, e.g., reduce health, respawn, etc.
         }
         else if (diceRoll == 2)

@@ -28,7 +28,7 @@ public class Minotaur_Event : MonoBehaviour
     public bool hasMinotaurHorns = false; // Flag to check if the player has Minotaur Horns
     public Text eventText; // UI Text to display event messages
 
-    public Player_Movement_TileSize playerMovement; // Reference to the player's movement script
+    public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
 
     public PlayerInventory playerInventory; // Reference to the player's inventory script
 
