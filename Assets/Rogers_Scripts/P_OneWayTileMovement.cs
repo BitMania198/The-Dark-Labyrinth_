@@ -22,7 +22,8 @@ public class P_OneWayTileMovement : MonoBehaviour
 
     [HideInInspector]
     public int DiceRoll;
-    bool canMove;
+    [HideInInspector]
+    public bool canMove;
     bool isMoving;
 
     // Start is called before the first frame update

@@ -74,6 +74,7 @@ public class Zombie_Event : MonoBehaviour
             Debug.Log("You won the fight against the zombie! But you are injured. you need to go to the number 14 space to heal.");
             eventText.text = "You won the fight against the zombie! But you are injured. You need to go to the number 14 space to heal."; // Display win message
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
+            GameObject.FindGameObjectWithTag("PlayerOne").GetComponent<PlayerInventory>().ZombiePoison = true;
             rollEvent = false; // Reset the roll event flag
             // Handle winning logic here, e.g., gain items, experience, etc.
         }
