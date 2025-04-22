@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     List<AccessoryItems> possesions = new List<AccessoryItems>();
+    [HideInInspector]
+    public bool ZombiePoison = false;
 
     public Image[] inven_sprites;
 
