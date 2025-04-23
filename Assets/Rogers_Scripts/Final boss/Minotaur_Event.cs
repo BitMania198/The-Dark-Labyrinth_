@@ -19,7 +19,7 @@ called Minotaur Horns and continue with the game.
 public class Minotaur_Event : MonoBehaviour
 {
     public bool rollEvent = false; // Flag to check if the player can roll the dice
-    public GameObject Player; // Reference to the player object
+    public GameObject GameOverPanel; // Reference to the player object
 
     public GameObject Minotaur; // Reference to the Minotaur object
     public AccessoryItems minotaurHorns; // Reference to the Minotaur Horns item
@@ -59,7 +59,7 @@ public class Minotaur_Event : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Player = collision.gameObject; // Get the player object
+            GameOverPanel = collision.gameObject; // Get the player object
             playerMovement.allowDiceRolling = false; // Disable dice rolling while in the Minotaur event area
             if (!rollEvent) // If the player is not already rolling
             {
@@ -72,11 +72,6 @@ public class Minotaur_Event : MonoBehaviour
                     playerInventory.EquipItem(magicAxe);
                 }
             }
-        }
-        else if (collision.tag != "Player" && rollEvent) // If the player leaves the trigger area
-        {
-            rollEvent = false; // Reset the flag if the player is not in the trigger area
-            Debug.Log("You left the Minotaur space. You can no longer roll for fight.");
         }
     }
 
@@ -99,9 +94,9 @@ public class Minotaur_Event : MonoBehaviour
         if (playerHP.currentHealth <= 0)
         {
             eventText.text += "\nYou have lost the game!"; // Display loss message
-            playerMovement.allowDiceRolling = true; // Re-enable dice rolling
             rollEvent = false; // Reset the rolling event
-            Player.SetActive(false); // Optionally deactivate the player
+            playerMovement.allowDiceRolling = false; // Re-enable dice rolling
+            GameOverPanel.SetActive(false); // Optionally deactivate the player
         }
         else if (minotaurHP.currentHealth <= 0)
         {

@@ -11,7 +11,10 @@ public class Spider_Event : MonoBehaviour
     private AccessoryItems accessoryItem; // Reference to the accessory item
     public PlayerInventory inventory; // Reference to the player's inventory
 
+    public Transform startPos; // Reference to the starting position for the player
     public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
+
+    Transform playerPos;
 
     public Text eventText; // UI Text to display event messages
 
@@ -65,25 +68,27 @@ public class Spider_Event : MonoBehaviour
         }
         else if (diceRoll == 5)
         {
-        if (playerInventory != null && playerInventory.HasItems())
-        {
-            AccessoryItems lostItem = playerInventory.RemoveRandomItem(); // Remove a random item
-            if (lostItem != null)
+            if (playerInventory != null && playerInventory.HasItems())
             {
-                eventText.text = $"You got bitten by the spider and lost your {lostItem.ItemName}!";
+                eventText.text = "You got bitten by the spider! You lose an item.";
+                // Remove a random item from the player's inventory
+                AccessoryItems lostItem = playerInventory.RemoveRandomItem();
+                if (lostItem != null)
+                {
+                    eventText.text += $"\nYou lost: {lostItem.ItemName}"; // Display the lost item name
+                }
+                else
+                {
+                    eventText.text += "\nYou have no items to lose."; // If no items to lose
+                }
+                playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
             }
             else
             {
-                eventText.text = "You got bitten by the spider, but no items were lost.";
+                eventText.text = "You got bitten by the spider! But you have no items to lose.";
+                playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
+                MovePlayerToStart(); // Move the player to the start position
             }
-            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
-        }
-        else
-        {
-            eventText.text = "You got bitten by the spider! But you have no items to lose.";
-            playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
-            MovePlayerToStart(); // Move the player to the start position
-        }
         }
         else if (diceRoll == 6)
         {
@@ -98,15 +103,15 @@ public class Spider_Event : MonoBehaviour
 
     void MovePlayerToStart()
     {
-        Player_Reset playerReset = Player.GetComponent<Player_Reset>();
-        if (playerReset != null)
+        if (playerMovement != null && startPos != null)
         {
-            // Call the ResetToStart method to reset the player's position
-            playerReset.ResetToStart();
+            playerMovement.transform.position = startPos.position; // Move player to start position
+            playerMovement.playerPos = startPos.position; // Update player's position in the movement script
+            eventText.text += "\nYou have been moved back to the start position."; // Display message for moving back to start
         }
         else
         {
-            Debug.LogWarning("Player_Reset component not found on the player!");
+            Debug.LogWarning("Player movement or start position is not set correctly.");
         }
     }
 
