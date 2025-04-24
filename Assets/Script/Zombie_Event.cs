@@ -28,7 +28,6 @@ public class Zombie_Event : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) // Use space key to roll the dice
             {
                 RollForfightZomble(); // Call the method to handle the zombie fight logic
-                rollEvent = false; // Reset the flag after rolling
             }
         }
     }

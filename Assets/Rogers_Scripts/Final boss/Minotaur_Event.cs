@@ -59,7 +59,6 @@ public class Minotaur_Event : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            GameOverPanel = collision.gameObject; // Get the player object
             playerMovement.allowDiceRolling = false; // Disable dice rolling while in the Minotaur event area
             if (!rollEvent) // If the player is not already rolling
             {
@@ -96,7 +95,7 @@ public class Minotaur_Event : MonoBehaviour
             eventText.text += "\nYou have lost the game!"; // Display loss message
             rollEvent = false; // Reset the rolling event
             playerMovement.allowDiceRolling = false; // Re-enable dice rolling
-            GameOverPanel.SetActive(false); // Optionally deactivate the player
+            GameOverPanel.SetActive(true); // Optionally deactivate the player
         }
         else if (minotaurHP.currentHealth <= 0)
         {
