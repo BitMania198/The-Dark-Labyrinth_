@@ -13,6 +13,7 @@ public class PickAnyEvent : MonoBehaviour
 
     private void Update()
     {
+
     if (pickAnyActive) // 0 - Bracelet, 1 - Brush, 2 - Diary, 3 - Locket, 4 - Mirror, 5 - Pouch, 6 - Ring, 7 - Magic Axe
     {
         for (int i = 0; i < items.Length; i++)
@@ -30,6 +31,7 @@ public class PickAnyEvent : MonoBehaviour
         }
     }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.tag == "Player" && !inventory.ZombiePoison)
