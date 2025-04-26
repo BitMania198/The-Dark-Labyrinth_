@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class RoomController : MonoBehaviour
 {
     public GameObject playerPrefab;
@@ -10,13 +11,32 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!PhotonNetwork.connected)
+        if (!PhotonNetwork.connected)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
             return;
         }
 
         PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
+
+        //PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
+        /*int playerIndex = PhotonNetwork.playerList.Length - 1; // Get the player's index
+        Transform assignedSpawnPoint = spawnPoints[playerIndex % spawnPoints.Length];
+
+        // Instantiate the player at the assigned spawn point
+
+        // Make the player look at the other player if there is one
+        if (PhotonNetwork.playerList.Length > 1)
+        {
+            foreach (var otherPlayer in GameObject.FindGameObjectsWithTag("Player"))
+            {
+                if (otherPlayer != player)
+                {
+                    player.transform.LookAt(otherPlayer.transform.position);
+                    break;
+                }
+            }
+        }*/
     }
     private void OnGUI()
     {

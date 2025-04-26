@@ -47,12 +47,12 @@ public class P_OneWayTileMovement : MonoBehaviour
             playerCollider.enabled = true; // Ensure the player's collider is enabled
         }
         turn = GameObject.FindGameObjectWithTag("TurnBased").GetComponent<Turnbased>();
-        if(turn != null && turn.p1_Movement == null)
+        if (turn != null && turn.p1_Movement == null)
         {
             turn.p1_Movement = this;
             playerNum = 1;
         }
-        else if(turn != null)
+        else if (turn != null)
         {
             turn.p2_Movement = this;
             playerNum = 2;
@@ -63,7 +63,6 @@ public class P_OneWayTileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print("Dice Roll: " + DiceRoll + "\nCan Move: " + canMove);
         if (!canMove)
         {
             if (allowDiceRolling)
@@ -110,6 +109,7 @@ public class P_OneWayTileMovement : MonoBehaviour
                 }
             }
         }
+        //print("Dice Roll: " + DiceRoll + "\nCan Move: " + canMove);
     }
     void GetWalledTiles()
     {

@@ -359,7 +359,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &45920104
 BoxCollider2D:
@@ -4217,7 +4217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: 23183d22df4863540b5a91b1c6146ae9, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &127472797
 BoxCollider2D:
@@ -4363,7 +4363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 2017243030}
   startPos: {fileID: 597531169}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
 --- !u!61 &165931786
@@ -4548,7 +4548,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bec2aad0eb988d24b9fbe53cf013dd8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4568,8 +4568,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177788192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5182, y: 20.4842, z: 0}
-  m_LocalScale: {x: 0.30248493, y: 0.30248824, z: 1}
+  m_LocalPosition: {x: 11.4967, y: 20.5057, z: 0}
+  m_LocalScale: {x: 0.43149605, y: 0.41002244, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5012,7 +5012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: 1eff0b3ee35f9d540a432eb8202ecd93, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!1 &226963897
 GameObject:
@@ -5061,7 +5061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 2017243030}
   startPos: {fileID: 597531169}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
 --- !u!61 &226963900
@@ -5157,7 +5157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &227249188
 BoxCollider2D:
@@ -5438,7 +5438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: d6d21eaeea708e1428ec7d24bb3c91d6, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &265217775
 BoxCollider2D:
@@ -5739,7 +5739,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &313448201
 BoxCollider2D:
@@ -6075,7 +6075,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &331472874
 BoxCollider2D:
@@ -6169,7 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 2017243030}
   startPos: {fileID: 597531169}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
 --- !u!61 &339274425
@@ -6652,7 +6652,7 @@ MonoBehaviour:
   startPos: {fileID: 1281014857}
   TrapPos: {fileID: 1309985354}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
 --- !u!483693784 &373480421
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6943,9 +6943,9 @@ MonoBehaviour:
   magicAxe: {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
   hasMinotaurHorns: 0
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   playerInventory: {fileID: 2017243030}
-  playerHP: {fileID: 0}
+  playerHP: {fileID: 2983101172041793326}
   minotaurHP: {fileID: 402749394}
 --- !u!4 &402749393
 Transform:
@@ -8229,7 +8229,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &591058303
 BoxCollider2D:
@@ -8496,7 +8496,7 @@ MonoBehaviour:
   playerInventory: {fileID: 2017243030}
   playerStartPos: {fileID: 597531169}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   GameWinPanel: {fileID: 498305314}
 --- !u!61 &625898240
 BoxCollider2D:
@@ -13769,7 +13769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &688004312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13876,7 +13876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: fd0db397810453a4987093916ed9679c, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &695962461
 BoxCollider2D:
@@ -14339,7 +14339,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &765588414
 BoxCollider2D:
@@ -14808,7 +14808,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &805449490
 BoxCollider2D:
@@ -14903,7 +14903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: b088f725649ac4340909144e46ccdbeb, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &828484686
 BoxCollider2D:
@@ -15319,97 +15319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913633779}
   m_CullTransparentMesh: 1
---- !u!1001 &942379342
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2547561321400112163, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2547561321400112163, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: statusText
-      value: 
-      objectReference: {fileID: 1835398828}
-    - target: {fileID: 2547561321400112163, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 1715377649}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4291169613488183663, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066943006542224190, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5066943006542224190, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: instantiationId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5959116777087529706, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: diceText
-      value: 
-      objectReference: {fileID: 1840922645}
-    - target: {fileID: 5959116777087529706, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: startTransform
-      value: 
-      objectReference: {fileID: 1281014857}
-    - target: {fileID: 7584188305114548508, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5066943006542224190, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-    - {fileID: 7653984012300592777, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 47deb89bbb4b7214d9db2b5d188b675c, type: 3}
 --- !u!1 &970523186
 GameObject:
   m_ObjectHideFlags: 0
@@ -16216,7 +16125,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1035479007
 BoxCollider2D:
@@ -16310,7 +16219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 2017243030}
   startPos: {fileID: 597531169}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
 --- !u!61 &1113916065
@@ -17414,7 +17323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &1337597581
 BoxCollider2D:
@@ -18121,7 +18030,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1480161495
 BoxCollider2D:
@@ -18388,7 +18297,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1506464141
 BoxCollider2D:
@@ -18849,7 +18758,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1626490491
 BoxCollider2D:
@@ -18986,7 +18895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659577982
 GameObject:
@@ -19073,7 +18982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disableDuration: 2
   startPos: {fileID: 597531169}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
 --- !u!483693784 &1659577986
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -19714,7 +19623,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1722120061
 BoxCollider2D:
@@ -20626,7 +20535,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1874562183
 BoxCollider2D:
@@ -20912,7 +20821,7 @@ MonoBehaviour:
   rollEvent: 0
   GameOverPanel: {fileID: 1410509062}
   eventText: {fileID: 1835398828}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   Camera: {fileID: 0}
 --- !u!61 &1975082295
 BoxCollider2D:
@@ -21878,7 +21787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryItem: {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   startPos: {fileID: 1281014857}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 3231322366401571167}
   eventText: {fileID: 1835398828}
 --- !u!61 &2124095306
 BoxCollider2D:
@@ -22137,3 +22046,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135129625}
   m_CullTransparentMesh: 1
+--- !u!114 &2983101172041793326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6479852816919301649, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+  m_PrefabInstance: {fileID: 6244058072162767239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14227fc8685e14f4ebd3ad1b81d259e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3231322366401571167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 411345922545514355, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+  m_PrefabInstance: {fileID: 6244058072162767239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce124e1bb17f404aa837d1b9e89d1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &6244058072162767239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 411345922545514355, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: diceText
+      value: 
+      objectReference: {fileID: 1840922645}
+    - target: {fileID: 411345922545514355, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: startTransform
+      value: 
+      objectReference: {fileID: 597531169}
+    - target: {fileID: 6479852816919301649, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: statusText
+      value: 
+      objectReference: {fileID: 1283482271}
+    - target: {fileID: 6479852816919301649, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1715377649}
+    - target: {fileID: 8595200502151336378, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701346497437660664, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d485fdb6ef1e7b14da4435ba908b764a, type: 3}
