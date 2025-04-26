@@ -157,7 +157,7 @@ public class P_OneWayTileMovement : MonoBehaviour
             int tileNum = GetUnusedTile();
             ToggleMovementAnimation(moveID, true);
             movemementTile[tileNum].sprite.sprite = movementTileSprites[moveID];
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             Vector3 temp = transform.position;
             ToggleMovementAnimation(moveID, false);
             while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle 0"))
