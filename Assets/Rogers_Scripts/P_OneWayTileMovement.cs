@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class P_OneWayTileMovement : MonoBehaviour
 {
     public IsMoveable[] isMoveables; // Up = 0 Right = 1 Down = 2 Left = 3
-    public MovementTile[] movemementTile;
+    MovementTile[] movemementTile;
     public Sprite[] movementTileSprites;
 
     public Collider2D playerCollider; // Reference to the player's collider
@@ -26,9 +27,14 @@ public class P_OneWayTileMovement : MonoBehaviour
     public bool canMove;
     bool isMoving;
 
+    Turnbased turn;
+    int playerNum;
+
     // Start is called before the first frame update
     void Start()
     {
+        movemementTile = new MovementTile[6];
+        GetWalledTiles();
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         isMoving = false;
@@ -39,6 +45,18 @@ public class P_OneWayTileMovement : MonoBehaviour
         if (playerCollider == null)
         {
             playerCollider.enabled = true; // Ensure the player's collider is enabled
+        }
+        turn = GameObject.FindGameObjectWithTag("TurnBased").GetComponent<Turnbased>();
+        if(turn != null && turn.p1_Movement == null)
+        {
+            turn.p1_Movement = this;
+            playerNum = 1;
+        }
+        else if(turn != null)
+        {
+            turn.p2_Movement = this;
+            playerNum = 2;
+            turn.EndTurn(2);
         }
     }
 
@@ -92,6 +110,13 @@ public class P_OneWayTileMovement : MonoBehaviour
                 }
             }
         }
+    }
+    void GetWalledTiles()
+    {
+        for (int i = 0; i < 6;  i++) {
+            movemementTile[i] = transform.GetChild(3).GetChild(i).GetComponent<MovementTile>();
+        }
+        transform.GetChild(3).parent = null;
     }
         public void ResetToStart()
     {
@@ -148,6 +173,7 @@ public class P_OneWayTileMovement : MonoBehaviour
         {
             canMove = false;
             DisableMovementTiles();
+            if(turn.TwoPlayers) turn.EndTurn(playerNum);
         }
         isMoving = false;
 

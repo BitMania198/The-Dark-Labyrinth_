@@ -10,12 +10,27 @@ public class PlayerInventory : MonoBehaviour
     public bool ZombiePoison = false;
 
     public Image[] inven_sprites;
+    Turnbased turn;
+    [HideInInspector]
+    public int playerNum;
 
     private void Start()
     {
         for (int i = 0; i < inven_sprites.Length; i++)
         {
             inven_sprites[i].enabled = false;
+        }
+        turn = GameObject.FindGameObjectWithTag("TurnBased").GetComponent<Turnbased>();
+        if (turn != null && turn.p1_Inventory == null)
+        {
+            turn.p1_Inventory = this;
+            playerNum = 1;
+        }
+        else if(turn != null)
+        {
+            turn.p2_Inventory = this;
+            playerNum = 2;
+            turn.TwoPlayers = true;
         }
     }
     public void AddItem(AccessoryItems addedItem)

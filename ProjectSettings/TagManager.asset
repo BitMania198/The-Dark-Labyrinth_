@@ -9,6 +9,7 @@ TagManager:
   - ItemCollector
   - Boss
   - Wall
+  - TurnBased
   layers:
   - Default
   - TransparentFX

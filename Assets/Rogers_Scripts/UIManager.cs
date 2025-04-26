@@ -8,10 +8,12 @@ public class UIManager : MonoBehaviour
     public GameObject LorePanel;
     public GameObject StartPanel;
     public GameObject HelpPanel;
+    public GameObject GameLobby;
     void Start()
     {
         StartPanel.SetActive(false);
         HelpPanel.SetActive(false);
+        GameLobby.SetActive(false);
     }
 
     public void StartPressed()
@@ -40,8 +42,8 @@ public class UIManager : MonoBehaviour
     }
     public void PlayerTwoPressed()
     {
-        //add Two player scene
-        SceneManager.LoadScene("");
+        StartPanel.SetActive(false );
+        GameLobby.SetActive(true);
     }
     IEnumerator PaperAnimation()
     {

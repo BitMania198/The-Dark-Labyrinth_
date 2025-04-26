@@ -55,6 +55,7 @@ public class PickUpEvent : MonoBehaviour
         if (collision.tag == "Player" && !inventory.ZombiePoison)
         {
             playerPos = collision.transform;
+            
             CollectItem();
             /*
             if (!collision.GetComponent<Player_Movement_TileSize>().canMove) //If player lands on space and cant move call function

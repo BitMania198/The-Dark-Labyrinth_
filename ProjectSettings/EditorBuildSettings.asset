@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PickuUpTest.unity
     guid: 38384914ef51c2b438a22ee52715f787
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TwoPlayers.unity
+    guid: 2627bd8b7865a8f41806a636f2cbbe84
   m_configObjects: {}

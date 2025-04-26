@@ -61,7 +61,6 @@ public class Spider_Event : MonoBehaviour
         
         int diceRoll = Random.Range(1, 7); // Simulate a dice roll between 1 and 6
 
-        PlayerInventory playerInventory = GameObject.FindObjectOfType<PlayerInventory>(); // Find the PlayerInventory in the scene
 
 
         if (diceRoll == 1 || diceRoll == 2 || diceRoll == 3 || diceRoll == 4)
@@ -72,11 +71,11 @@ public class Spider_Event : MonoBehaviour
         }
         else if (diceRoll == 5)
         {
-            if (playerInventory != null && playerInventory.HasItems())
+            if (inventory != null && inventory.HasItems())
             {
                 eventText.text = "You got bitten by the spider! You lose an item.";
                 // Remove a random item from the player's inventory
-                AccessoryItems lostItem = playerInventory.RemoveRandomItem();
+                AccessoryItems lostItem = inventory.RemoveRandomItem();
                 if (lostItem != null)
                 {
                     eventText.text += $"\nYou lost: {lostItem.ItemName}"; // Display the lost item name
