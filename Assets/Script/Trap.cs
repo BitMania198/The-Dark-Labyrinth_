@@ -10,15 +10,21 @@ public class Trap : MonoBehaviour
 
     public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
     Transform playerPos;
+    
+    public AudioClip TrapSound; // Sound to play when the player enters the trap
 
     // This method is called when another collider enters the trigger collider attached to this object
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) // Check if the collider belongs to the player
         {
+            if (TrapSound != null) // Play trap sound if available
+            {
+                AudioSource.PlayClipAtPoint(TrapSound, transform.position); // Play the trap sound at the trap's position
+            }
             playerPos = collision.transform; // Assign the player's transform to playerPos
             P_OneWayTileMovement playerMovement = playerPos.GetComponent<P_OneWayTileMovement>();
-        
+
             if (playerMovement != null) // Ensure playerMovement is not null
             {
                 playerMovement.transform.position = startPos.position; // Move player to start position
@@ -28,9 +34,9 @@ public class Trap : MonoBehaviour
                 StartCoroutine(DisableTrapTemporarily());
             }
             else
-        {
-            Debug.LogError("P_OneWayTileMovement component not found on the player.");
-        }
+            {
+                Debug.LogError("P_OneWayTileMovement component not found on the player.");
+            }
         }
     }
 

@@ -34,6 +34,10 @@ public class Minotaur_Event : MonoBehaviour
 
     public Player1HP playerHP; // Reference to the player's health script
     public MinotaurHP minotaurHP; // Reference to the Minotaur's health script
+
+    public AudioClip MinotaurSound; // Sound to play when encountering the Minotaur
+    public AudioClip WinSound; // Sound to play when winning the fight
+    public AudioClip LosingSound; // Sound to play when losing the fight
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +67,10 @@ public class Minotaur_Event : MonoBehaviour
             if (!rollEvent) // If the player is not already rolling
             {
                 eventText.text = "You have encountered a Minotaur! Press 'Space' to roll for fight."; // Display event message
+                if (MinotaurSound != null) // Play sound only if the player is not already rolling
+                {
+                    AudioSource.PlayClipAtPoint(MinotaurSound, transform.position); // Play the Minotaur encounter sound
+                }
                 rollEvent = true; // Set the flag to indicate the player can roll
 
                 AccessoryItems magicAxe = playerInventory.GetItemByType(AccessoryItems.specialItem.MagicAxe);
@@ -95,6 +103,10 @@ public class Minotaur_Event : MonoBehaviour
             eventText.text += "\nYou have lost the game!"; // Display loss message
             rollEvent = false; // Reset the rolling event
             playerMovement.allowDiceRolling = false; // Re-enable dice rolling
+            if (LosingSound != null) // Play sound for losing the fight
+            {
+                AudioSource.PlayClipAtPoint(LosingSound, transform.position); // Play the sound for losing the fight
+            }
             GameOverPanel.SetActive(true); // Optionally deactivate the player
         }
         else if (minotaurHP.currentHealth <= 0)
@@ -102,6 +114,10 @@ public class Minotaur_Event : MonoBehaviour
             eventText.text += "\nYou defeated the Minotaur! You gain Minotaur Horns."; // Display win message
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling
             rollEvent = false; // Reset the rolling event
+            if (WinSound != null) // Play sound for winning the fight
+            {
+                AudioSource.PlayClipAtPoint(WinSound, transform.position); // Play the sound for winning the fight
+            }
             Minotaur.SetActive(false); // Optionally deactivate the Minotaur
             GiveMinotaurHorns(); // Call method to give player Minotaur Horns
             // Add logic to give player Minotaur Horns item here

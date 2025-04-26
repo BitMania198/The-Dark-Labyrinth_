@@ -17,6 +17,8 @@ public class P_OneWayTileMovement : MonoBehaviour
 
     public Transform startTransform; // Starting position of the player
 
+    public AudioClip FootStep; // Reference to the audio clip for sound effects
+
     public Vector3 playerPos;
     Animator animator;
 
@@ -74,21 +76,37 @@ public class P_OneWayTileMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     isMoving = true;
+                    if (FootStep != null)
+                    {
+                        AudioSource.PlayClipAtPoint(FootStep, transform.position); // Play footstep sound
+                    }
                     StartCoroutine(MoveToTile(0));
                 }
                 if (Input.GetKeyDown(KeyCode.A))
                 {
                     isMoving = true;
+                    if (FootStep != null)
+                    {
+                        AudioSource.PlayClipAtPoint(FootStep, transform.position); // Play footstep sound
+                    }
                     StartCoroutine(MoveToTile(3));
                 }
                 if (Input.GetKeyDown(KeyCode.S))
                 {
                     isMoving = true;
+                    if (FootStep != null)
+                    {
+                        AudioSource.PlayClipAtPoint(FootStep, transform.position); // Play footstep sound
+                    }
                     StartCoroutine(MoveToTile(2));
                 }
                 if (Input.GetKeyDown(KeyCode.D))
                 {
                     isMoving = true;
+                    if (FootStep != null)
+                    {
+                        AudioSource.PlayClipAtPoint(FootStep, transform.position); // Play footstep sound
+                    }
                     StartCoroutine(MoveToTile(1));
                 }
             }
@@ -143,8 +161,8 @@ public class P_OneWayTileMovement : MonoBehaviour
             Vector3 temp = transform.position;
             ToggleMovementAnimation(moveID, false);
             while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle 0"))
-            { 
-                yield return new WaitForSeconds(0f); 
+            {
+                yield return new WaitForSeconds(0f);
             }
             UpdatePos(moveID, tileNum);
             movemementTile[tileNum].isActive = true;

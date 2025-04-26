@@ -17,6 +17,8 @@ public class Trap_endless_Corridor : MonoBehaviour
 
     bool triggeredOnce = false; // Flag to ensure the trap is triggered only once
 
+    public AudioClip TrapSound; // Sound to play when the player falls into the trap
+
     void Start()
     {
         rollEvent = false; // Initialize the rollEvent flag to false   
@@ -41,6 +43,10 @@ public class Trap_endless_Corridor : MonoBehaviour
             playerMovement.allowDiceRolling = false; // Disable dice rolling while in the trap area
             if (!triggeredOnce) // Ensure the trap is triggered only once
             {
+                if (TrapSound != null) // Play trap sound if available
+                {
+                    AudioSource.PlayClipAtPoint(TrapSound, transform.position); // Play the trap sound at the trap's position
+                }
                 triggeredOnce = true; // Set the flag to true
                 playerMovement = collision.GetComponent<P_OneWayTileMovement>(); // Get the player's movement script
 

@@ -15,6 +15,13 @@ public class Spider_Event : MonoBehaviour
     public GameObject GameOverPanel; // Reference to the game over panel
 
     Transform playerPos;
+    
+
+    public AudioClip EnemySound; // Sound to play when encountering the spider
+
+    public AudioClip WinSound; // Sound to play when winning the fight
+    public AudioClip LoseItemSound; // Sound to play when losing an item
+    public AudioClip LoseSound; // Sound to play when losing the fight
 
     public Text eventText; // UI Text to display event messages
 
@@ -44,6 +51,10 @@ public class Spider_Event : MonoBehaviour
             if (!rollEvent) // If the player is not already rolling
             {
                 eventText.text = "You have encountered a spider! Press 'Space' to roll for fight."; // Display event message
+                if (EnemySound != null) // Play sound only if the player is not already rolling
+                {
+                    AudioSource.PlayClipAtPoint(EnemySound, transform.position); // Play the spider encounter sound
+                }
                 rollEvent = true; // Set the flag to indicate the player can roll
             }
         }
@@ -64,7 +75,12 @@ public class Spider_Event : MonoBehaviour
         if (diceRoll == 1 || diceRoll == 2 || diceRoll == 3 || diceRoll == 4)
         {
             eventText.text = "You win the fight against the spider";
+            if (WinSound != null)
+            {
+                AudioSource.PlayClipAtPoint(WinSound, transform.position); // Play the sound for winning the fight
+            }
             rollEvent = false; // Reset the flag after the fight
+
             playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
         }
         else if (diceRoll == 5)
@@ -77,10 +93,18 @@ public class Spider_Event : MonoBehaviour
                 if (lostItem != null)
                 {
                     eventText.text += $"\nYou lost: {lostItem.ItemName}"; // Display the lost item name
+                    if (LoseItemSound != null)
+                    {
+                        AudioSource.PlayClipAtPoint(LoseItemSound, transform.position); // Play the sound for losing an item
+                    }
                 }
                 else
                 {
                     eventText.text += "\nYou have no items to lose."; // If no items to lose
+                    if (LoseItemSound != null)
+                    {
+                        AudioSource.PlayClipAtPoint(LoseItemSound, transform.position); // Play the sound for losing an item
+                    }
                 }
                 playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
             }
@@ -90,6 +114,10 @@ public class Spider_Event : MonoBehaviour
                 rollEvent = false; // Reset the flag after the fight
                 playerMovement.allowDiceRolling = true; // Re-enable dice rolling after the fight
                 MovePlayerToStart(); // Move the player to the start position
+                if (LoseItemSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(LoseItemSound, transform.position); // Play the sound for losing an item
+                }
             }
         }
         else if (diceRoll == 6)
@@ -99,7 +127,10 @@ public class Spider_Event : MonoBehaviour
             GameOverPanel.SetActive(true); // Activate the game over panel
             rollEvent = false; // Reset the flag after the fight
             GameOver(); // Call the GameOver method to handle game over logic
-
+            if (LoseSound != null)
+            {
+                AudioSource.PlayClipAtPoint(LoseSound, transform.position); // Play the sound for losing the fight
+            }
         }
         rollEvent = false; // Reset the flag after the fight
     }

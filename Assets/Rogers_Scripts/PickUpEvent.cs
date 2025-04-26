@@ -13,6 +13,11 @@ public class PickUpEvent : MonoBehaviour
 
     public P_OneWayTileMovement playerMovement; // Reference to the player's movement script
     Transform playerPos;
+
+    public AudioClip PickUpSound; // Sound to play when picking up the item
+    public AudioClip readingSound; // Sound to play when reading the diary
+    public AudioClip RefuseSound; // Sound to play when refusing to read the diary
+    public AudioClip CursedSound; // Sound to play when starting the background music
     public Text eventText; // UI Text to display event messages
     // Start is called before the first frame update
     void Start()
@@ -28,6 +33,10 @@ public class PickUpEvent : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
+                if (readingSound != null) // Play reading sound if available
+                {
+                    AudioSource.PlayClipAtPoint(readingSound, transform.position);
+                }
                 print("Press 'Space' to roll dice.");
                 eventText.text = "Press 'Space' to roll dice.";
                 ChoiceEvent = false;
@@ -35,6 +44,11 @@ public class PickUpEvent : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.N))
             {
+                if (RefuseSound != null) // Play refusal sound if available
+                {
+                    AudioSource.PlayClipAtPoint(RefuseSound, transform.position);
+                }
+                playerMovement.allowDiceRolling = true; // Re-enable dice rolling
                 print("You decide to respect the princess' privacy.");
                 eventText.text = "You decide to respect the princess' privacy.";
                 inventory.AddItem(accessoryItem);
@@ -78,6 +92,10 @@ public class PickUpEvent : MonoBehaviour
             }
             else
             {
+                if (PickUpSound != null) // Play pickup sound if available
+                {
+                    AudioSource.PlayClipAtPoint(PickUpSound, transform.position);
+                }
                 print("You have found the " + accessoryItem.name + "!");
                 eventText.text = "You have found the " + accessoryItem.name + "!"; // Display message for finding the item
                 inventory.AddItem(accessoryItem);
@@ -91,6 +109,10 @@ public class PickUpEvent : MonoBehaviour
         int diceRoll = Random.Range(1, 6);
         if (diceRoll == 1 || diceRoll == 2)
         {
+            if (PickUpSound != null) // Play cursed sound if available
+            {
+                AudioSource.PlayClipAtPoint(CursedSound, transform.position);
+            }
             print("You find nothing interesting, but you still bring her diary");
             eventText.text = "You find nothing interesting, but you still bring her diary"; // Display message for finding nothing interesting
             inventory.AddItem(accessoryItem);
@@ -98,6 +120,10 @@ public class PickUpEvent : MonoBehaviour
         }
         else if (diceRoll == 3 || diceRoll == 4)
         {
+            if (PickUpSound != null) // Play cursed sound if available
+            {
+                AudioSource.PlayClipAtPoint(CursedSound, transform.position);
+            }
             print("You find a horrifing secret which you wish you never knew.\n You drop the diary and head to the start");
             eventText.text = "You find a horrifying secret which you wish you never knew.\nYou drop the diary and head to the start"; // Display message for finding a horrifying secret
                                                                                                                                       //insert sending to start code here (needs to be before accesoryItem code
@@ -109,6 +135,10 @@ public class PickUpEvent : MonoBehaviour
         }
         else
         {
+            if (CursedSound != null) // Play cursed sound if available
+            {
+                AudioSource.PlayClipAtPoint(CursedSound, transform.position);
+            }
             print("You find the location of one of her most prized possetions!");
             eventText.text = "You find the location of one of her most prized possessions!"; // Display message for finding a prized possession
             inventory.AddItem(accessoryItem);

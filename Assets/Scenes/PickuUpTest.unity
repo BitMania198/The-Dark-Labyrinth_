@@ -361,6 +361,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &45920104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4023,152 +4027,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &126266219
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126266220}
-  - component: {fileID: 126266223}
-  - component: {fileID: 126266222}
-  - component: {fileID: 126266221}
-  m_Layer: 0
-  m_Name: MinotaurCaughtEvent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &126266220
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126266219}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.5, y: 18.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1010224980}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126266221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126266219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7927c600706cb4449d29146cd4ccaf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MagicAxe: {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
-  MinotaurLocation: {fileID: 1387660696}
-  eventText: {fileID: 1835398828}
---- !u!61 &126266222
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126266219}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
-  m_EdgeRadius: 0
---- !u!212 &126266223
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126266219}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &127472794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4076,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: 23183d22df4863540b5a91b1c6146ae9, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &127472797
 BoxCollider2D:
@@ -4365,6 +4227,10 @@ MonoBehaviour:
   startPos: {fileID: 597531169}
   playerMovement: {fileID: 1645498039}
   GameOverPanel: {fileID: 1410509062}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &165931786
 BoxCollider2D:
@@ -5013,6 +4879,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: 1eff0b3ee35f9d540a432eb8202ecd93, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!1 &226963897
 GameObject:
@@ -5063,6 +4933,10 @@ MonoBehaviour:
   startPos: {fileID: 597531169}
   playerMovement: {fileID: 1645498039}
   GameOverPanel: {fileID: 1410509062}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &226963900
 BoxCollider2D:
@@ -5158,6 +5032,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &227249188
 BoxCollider2D:
@@ -5439,6 +5317,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: d6d21eaeea708e1428ec7d24bb3c91d6, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &265217775
 BoxCollider2D:
@@ -5594,6 +5476,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   - {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   - {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
+  PickUpSound: {fileID: 8300000, guid: 29d3cba58464f5444a821c2559b9ef7d, type: 3}
 --- !u!61 &266974698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5741,6 +5624,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &313448201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6077,6 +5964,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &331472874
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6171,6 +6062,10 @@ MonoBehaviour:
   startPos: {fileID: 597531169}
   playerMovement: {fileID: 1645498039}
   GameOverPanel: {fileID: 1410509062}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &339274425
 BoxCollider2D:
@@ -6424,6 +6319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventText: {fileID: 1835398828}
+  TeleportSound: {fileID: 8300000, guid: 7f4b9e701cd44c542902f7415986738f, type: 3}
 --- !u!61 &356921267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6653,6 +6549,7 @@ MonoBehaviour:
   TrapPos: {fileID: 1309985354}
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
+  TrapSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
 --- !u!483693784 &373480421
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -6693,7 +6590,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6714,8 +6611,8 @@ Tilemap:
   - first: {x: 3, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6724,8 +6621,18 @@ Tilemap:
   - first: {x: 9, y: -1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 3, y: 3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6734,28 +6641,48 @@ Tilemap:
   - first: {x: 13, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 10, z: 0}
+  - first: {x: 2, y: 11, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 8, y: 15, z: 0}
+  - first: {x: 7, y: 14, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -2, y: 15, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 12, y: 17, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6764,8 +6691,8 @@ Tilemap:
   - first: {x: 4, y: 20, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6773,13 +6700,17 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 6
-    m_Data: {fileID: 11400000, guid: 4a3e34a2a4857eb4485c2f0c1c52e4c1, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 9
+    m_Data: {fileID: 11400000, guid: b0d6fc6412bef784fa296c3211e1ea38, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 6
-    m_Data: {fileID: -955245937, guid: 28a989b9d5519eb41ac8d3dfb93f1c1c, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 9
+    m_Data: {fileID: 99903868, guid: 28a989b9d5519eb41ac8d3dfb93f1c1c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 9
     m_Data:
       e00: 1
       e01: 0
@@ -6798,13 +6729,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 6
+  - m_RefCount: 9
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: -1, z: 0}
-  m_Size: {x: 14, y: 22, z: 1}
+  m_Origin: {x: -2, y: -1, z: 0}
+  m_Size: {x: 16, y: 22, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -6947,6 +6878,9 @@ MonoBehaviour:
   playerInventory: {fileID: 2017243030}
   playerHP: {fileID: 1645498038}
   minotaurHP: {fileID: 402749394}
+  MinotaurSound: {fileID: 8300000, guid: b56651485932092488d612b4e5181e11, type: 3}
+  WinSound: {fileID: 8300000, guid: 7f4b9e701cd44c542902f7415986738f, type: 3}
+  LosingSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!4 &402749393
 Transform:
   m_ObjectHideFlags: 0
@@ -8084,6 +8018,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   - {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   - {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
+  PickUpSound: {fileID: 8300000, guid: 29d3cba58464f5444a821c2559b9ef7d, type: 3}
 --- !u!61 &582771748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8231,6 +8166,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &591058303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8497,6 +8436,9 @@ MonoBehaviour:
   playerStartPos: {fileID: 597531169}
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
+  WinSound: {fileID: 8300000, guid: 29d3cba58464f5444a821c2559b9ef7d, type: 3}
+  NotEnoughPossessionsSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  MinotaurHornsSound: {fileID: 8300000, guid: ffda85c3af21ce749bd612f04fe8d79f, type: 3}
   GameWinPanel: {fileID: 498305314}
 --- !u!61 &625898240
 BoxCollider2D:
@@ -13877,6 +13819,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: fd0db397810453a4987093916ed9679c, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &695962461
 BoxCollider2D:
@@ -14341,6 +14287,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &765588414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14810,6 +14760,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &805449490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14904,6 +14858,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: b088f725649ac4340909144e46ccdbeb, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &828484686
 BoxCollider2D:
@@ -15751,6 +15709,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   - {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   - {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
+  PickUpSound: {fileID: 8300000, guid: 29d3cba58464f5444a821c2559b9ef7d, type: 3}
 --- !u!61 &996222631
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15961,7 +15920,6 @@ Transform:
   - {fileID: 575807344}
   - {fileID: 1770374456}
   - {fileID: 485312021}
-  - {fileID: 126266220}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16132,6 +16090,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1035479007
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16226,6 +16188,10 @@ MonoBehaviour:
   startPos: {fileID: 597531169}
   playerMovement: {fileID: 1645498039}
   GameOverPanel: {fileID: 1410509062}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &1113916065
 BoxCollider2D:
@@ -17103,6 +17069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 2017243030}
   eventText: {fileID: 1835398828}
+  CureSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
 --- !u!61 &1323359885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17249,6 +17216,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &1337597581
 BoxCollider2D:
@@ -17957,6 +17928,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1480161495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18224,6 +18199,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1506464141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18636,6 +18615,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1626490491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18881,6 +18864,7 @@ MonoBehaviour:
   disableDuration: 2
   startPos: {fileID: 597531169}
   playerMovement: {fileID: 1645498039}
+  TrapSound: {fileID: 8300000, guid: 55457e21477bdd44d937f1c066555d51, type: 3}
 --- !u!483693784 &1659577986
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -19523,6 +19507,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1722120061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19855,6 +19843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventText: {fileID: 1835398828}
+  TeleportSound: {fileID: 8300000, guid: 7f4b9e701cd44c542902f7415986738f, type: 3}
 --- !u!61 &1770374458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20435,6 +20424,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1874562183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20721,6 +20714,10 @@ MonoBehaviour:
   eventText: {fileID: 1835398828}
   playerMovement: {fileID: 1645498039}
   Camera: {fileID: 0}
+  EnemySound: {fileID: 8300000, guid: f9a3885e106bb7f4c852e31b3bac7ee7, type: 3}
+  WinSound: {fileID: 8300000, guid: 2fc39f57b5705d941b2bf909592a307a, type: 3}
+  LoseItemSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
+  LoseSound: {fileID: 8300000, guid: 89e681dea8692c741ba4a508c87147ee, type: 3}
 --- !u!61 &1975082295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21410,6 +21407,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82ebc6c7655bff3499db40a0398dcfd8, type: 2}
   - {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   - {fileID: 11400000, guid: fd43b5bf9656d4848a0013b27adfc731, type: 2}
+  PickUpSound: {fileID: 8300000, guid: 29d3cba58464f5444a821c2559b9ef7d, type: 3}
 --- !u!61 &2075591689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21536,13 +21534,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6d135c31a9f0cf448a33d663363a577, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 160
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -21684,6 +21682,10 @@ MonoBehaviour:
   accessoryItem: {fileID: 11400000, guid: f3e42501f1c5e5c43b9b2314d5206b31, type: 2}
   startPos: {fileID: 1281014857}
   playerMovement: {fileID: 1645498039}
+  PickUpSound: {fileID: 8300000, guid: 82f21721f99bf1343bebff8c0dffeaa4, type: 3}
+  readingSound: {fileID: 8300000, guid: 1784518de9eaaf348830bbd7ee6f554b, type: 3}
+  RefuseSound: {fileID: 8300000, guid: 2e234359f3c876844bbcb97c875f8189, type: 3}
+  CursedSound: {fileID: 8300000, guid: 796cf664286039f4ab68bf987b97d3ad, type: 3}
   eventText: {fileID: 1835398828}
 --- !u!61 &2124095306
 BoxCollider2D:
@@ -21951,9 +21953,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 102054719737977744, guid: 6284faf0d24b2e04eba9e0aec4282a2f, type: 3}
+      propertyPath: FootStep
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cdc3d1f10c32f44d933f1c3c1cd3c18, type: 3}
+    - target: {fileID: 102054719737977744, guid: 6284faf0d24b2e04eba9e0aec4282a2f, type: 3}
       propertyPath: diceText
       value: 
       objectReference: {fileID: 1840922645}
+    - target: {fileID: 102054719737977744, guid: 6284faf0d24b2e04eba9e0aec4282a2f, type: 3}
+      propertyPath: Footsteps
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 102054719737977744, guid: 6284faf0d24b2e04eba9e0aec4282a2f, type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5cdc3d1f10c32f44d933f1c3c1cd3c18, type: 3}
     - target: {fileID: 102054719737977744, guid: 6284faf0d24b2e04eba9e0aec4282a2f, type: 3}
       propertyPath: startTransform
       value: 
