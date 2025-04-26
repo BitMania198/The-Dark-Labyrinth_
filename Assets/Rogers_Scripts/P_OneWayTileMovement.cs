@@ -25,6 +25,7 @@ public class P_OneWayTileMovement : MonoBehaviour
     [HideInInspector]
     public bool canMove;
     bool isMoving;
+    //bool doneMoving = false;
 
     // Start is called before the first frame update
     void Start()
@@ -141,6 +142,10 @@ public class P_OneWayTileMovement : MonoBehaviour
             yield return new WaitForSeconds(1f);
             Vector3 temp = transform.position;
             ToggleMovementAnimation(moveID, false);
+            while (!animator.GetCurrentAnimatorStateInfo(0).IsName("Idle 0"))
+            { 
+                yield return new WaitForSeconds(0f); 
+            }
             UpdatePos(moveID, tileNum);
             movemementTile[tileNum].isActive = true;
         }
